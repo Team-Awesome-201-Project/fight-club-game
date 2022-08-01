@@ -89,3 +89,6 @@ Make user objects persist in memory
 Ability to choose an existing user
 Button for showing stats
 
+Problem Domain Schematic:
+
+
