@@ -15,12 +15,14 @@ function Player(playerType,attack,defense,specialAttack,highestLevelCompleted,cu
   this.src = `images/${this.playerType}.${fileExtension}`;
 }
 
-function Boss(){bAttack,bDefense,bSpecialAttack,bHealthPoints,fileExtension = 'jpg'
+function Boss(bossType,bAttack,bDefense,bSpecialAttack,bHealthPoints,fileExtension = 'jpg')
+{
+  this.bossType = bossType;
   this.bAttack = bAttack;
   this.bDefense = bDefense;
   this.bSpecialAttack = bSpecialAttack;
   this.bHealthPoints = bHealthPoints;
-  this.bSrc = `images/${this.playerType}.${fileExtension}`;
+  this.bSrc = `images/${this.bossType}.${fileExtension}`;
 }
 
 let GameManger = {
@@ -66,10 +68,10 @@ this.setPreFight();
       // Special Attack
       // Health Points
       // Image
-      let boss1 = new Boss("boss1", 100, 100, 100, 100, placeholder);
-      let boss2 = new Boss("boss2", 100, 100, 100, 100, placeholder);
-      let boss3 = new Boss("boss3", 100, 100, 100, 100, placeholder);
-      let boss4 = new Boss("boss4", 100, 100, 100, 100, placeholder);
+      let boss1 = new Boss(bossType, 100, 100, 100, 100, placeholder);
+      let boss2 = new Boss(bossType, 100, 100, 100, 100, placeholder);
+      let boss3 = new Boss(bossType, 100, 100, 100, 100, placeholder);
+      let boss4 = new Boss(bossType, 100, 100, 100, 100, placeholder);
 
 
 
