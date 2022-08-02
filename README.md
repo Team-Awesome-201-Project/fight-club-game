@@ -11,9 +11,7 @@ Amy - Local storage queen
 
 # USER STORIES:
 
-# User Story #1
-
-## As a user I want to know more about the developers.
+## User Story #1 As a user I want to know more about the developers.
 
 ### Feature Tasks:
 - About me page “Meet the Team” 
@@ -28,10 +26,7 @@ Amy - Local storage queen
 - Ensure that social links use the right icons and are properly linked
 - Ensure that CSS placement of all elements is correct
 
-
-# User Story #2
-
-## As a user I want to play the game
+## User Story #2 As a user I want to play the game
 
 ### Feature Tasks
 - User enters name
@@ -49,9 +44,7 @@ Amy - Local storage queen
 - Form or prompt for user to choose action
 - Results of turn announced
 
-# User Story #3
-
-## As a user I want to compare my stats to other players
+## User Story #3 As a user I want to compare my stats to other players
 
 ### Feature Tasks
 - Leaderboards that shows stats
@@ -79,16 +72,21 @@ Amy - Local storage queen
 - Add logic for the second player to fight instead of the computer
 - Alternate leaderboard for results of two player fights
 
-#User Story #5 I want to see my stats for all areas of the game
+## User Story #5 I want to see my stats for all areas of the game
 
-Features Tasks
-When entering the websites user can choose their previous profile
-Users can then click on a button to see their stats for both individual and PvP bouts
-Acceptance Tasks
-Make user objects persist in memory
-Ability to choose an existing user
-Button for showing stats
+### Features Tasks
+- When entering the websites user can choose their previous profile
+- Users can then click on a button to see their stats for both individual and PvP bouts
 
-Problem Domain Schematic:
+### Acceptance Tasks
+- Make user objects persist in memory
+- Ability to choose an existing user
+- Button for showing stats
+
+### [Problem Domain Schematic](images/Fight%20club%20domain%20model.png)
+
+### [Wireframe Tier 1](images/wireframe-tier1.png)
+ 
+### [Wireframe Tier 2](images/wireframe-tier2.png)
 
 
