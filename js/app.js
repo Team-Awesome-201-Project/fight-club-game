@@ -1,7 +1,7 @@
 let player;
 let boss;
 
-function Player(playerType,attack,defense,specialAttack,highestLevelCompleted,currentLevel,totalWins,totalLosses,image) 
+function Player(playerType,attack,defense,specialAttack,highestLevelCompleted,currentLevel,totalWins,totalLosses,fileExtension = 'jpg') 
 {
   this.playerType = playerType;
   this.attack = attack;
@@ -12,15 +12,15 @@ function Player(playerType,attack,defense,specialAttack,highestLevelCompleted,cu
   this.currentLevel = currentLevel;
   this.totalWins = totalWins;
   this.totalLosses = totalLosses;
-  this.image = image;
+  this.src = `images/${this.playerType}.${fileExtension}`;
 }
 
-function Boss(){
-  this.attack = attack;
-  this.defense = defense;
-  this.specialAttack = specialAttack;
-  this.healthPoints = healthPoints;
-  this.image = image
+function Boss(){bAttack,bDefense,bSpecialAttack,bHealthPoints,fileExtension = 'jpg'
+  this.bAttack = bAttack;
+  this.bDefense = bDefense;
+  this.bSpecialAttack = bSpecialAttack;
+  this.bHealthPoints = bHealthPoints;
+  this.bSrc = `images/${this.playerType}.${fileExtension}`;
 }
 
 let GameManger = {
