@@ -1,9 +1,9 @@
 let player;
 let boss;
 
-function Player(playerType,attack,defense,specialAttack,highestLevelCompleted,currentLevel,totalWins,totalLosses,fileExtension = 'jpg') 
+function Player(userName,attack,defense,specialAttack,highestLevelCompleted,currentLevel,totalWins,totalLosses,fileExtension = 'jpg') 
 {
-  this.playerType = playerType;
+  this.userName = userName;
   this.attack = attack;
   this.defense = defense;
   this.specialAttack = specialAttack;
