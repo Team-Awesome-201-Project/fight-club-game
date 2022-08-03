@@ -105,10 +105,10 @@ function buildPlayer() {
 
   }
 
-   console.log(makeBoss());
-   console.log(makeBoss());
-   console.log(makeBoss());
-   console.log(makeBoss());
+  //  console.log(makeBoss());
+  //  console.log(makeBoss());
+  //  console.log(makeBoss());
+  //  console.log(makeBoss());
 
 
   //RANDOMIZER FOR PLAYER AND BOSS STATS - CAN WE USE THE SAME ONE FOR GAMEPLAY?
@@ -125,16 +125,19 @@ function buildPlayer() {
 function handleClick(e){
   e.preventDefault();
   startFight();
-
-
+  
+ 
+  
+//.inner = "Fight Again";
 }
 
 
   function startFight() {
     newPlayer.healthPoints = 100;
     newPlayer.losses++;
+    document.getElementById("fight").innerHTML="Fight Again";
     console.log(newPlayer);
-    getElementById("fight").innerHTML = "Fight Again";
+    
     storePlayer(); 
     
   }
@@ -146,7 +149,7 @@ function handleClick(e){
     localStorage.setItem('storedPlayer', stringifiedPlayer);
   }
 
-  document.getElementById("fight").addEventListener("click", startFight);
+document.getElementById("fight").addEventListener("click", handleClick);
 
 
 
