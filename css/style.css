@@ -40,8 +40,7 @@
   }
 
 
-box-sizing: border-box;
-}
+
 .layout {
   width: 450px;
   height: 600px;
@@ -77,3 +76,4 @@ padding-bottom: em; }
 .test3 {
   display: none;
 }
+//
