@@ -4,88 +4,83 @@ let form = document.getElementById('newUser');
 
 function handleSubmit(event) {
   event.preventDefault();
-  let newPlayer = event.target.newUser.value;
+  let newUserName = event.target.newUser.value;
   let avatarChoice = event.target.chooseAvatar.value;
   form.reset();
-  console.log(`This is the new character ${newUser}, and his image address is ${avatarChoice}`);
-  return newPlayer, avatarChoice; 
+  console.log(`This is the new character ${newUserName}, and his image address is ${avatarChoice}`);
+  newPlayer = new Player(newUserName, avatarChoice, randomStat(), randomStat(), randomStat());
+  console.log(newPlayer);
+}
+// //form is working
+
+// //DECLARE GLOBAL VARIABLES
+
+let newPlayer = {};
+let boss = {};
+let bossArr = [];
+playerInStorage = false;
+
+ //USER CONSTRUCTOR
+
+function Player(playerName, avatarChoice, attack, defense, specialAttack, highestLevelCompleted = 0, currentLevel = 0, totalWins = 0, totalLosses = 0) {
+  this.playerName = playerName;
+  this.avatar = avatarChoice;
+  this.attack = attack;
+  this.defense = defense;
+  this.specialAttack = specialAttack;
+  this.healthPoints = 100;
+  this.highestLevelCompleted = highestLevelCompleted;
+  this.currentLevel = currentLevel;
+  this.totalWins = totalWins;
+  this.totalLosses = totalLosses;
+ 
 }
 
-form.addEventListener('submit', handleSubmit);
 
+//HELPER CONSTRUCTOR - TAKES IN LOCAL STORAGE FIRST
 
-// // //form is working
+function buildPlayer() {
+//check to see if there are players in memory
 
-// // //DECLARE GLOBAL VARIABLES
-
-// // let player;
-// // let boss;
-// // let bossArr = [];
-
-// // //USER CONSTRUCTOR
-
-// function Player(playerName, avatarChoice, attack, defense, specialAttack, highestLevelCompleted = 0, currentLevel = 0, totalWins = 0, totalLosses = 0) {
-//   this.playerName = playerName;
-//   this.avatar = avatarChoice;
-//   this.attack = attack;
-//   this.defense = defense;
-//   this.specialAttack = specialAttack;
-//   this.healthPoints = 100;
-//   this.highestLevelCompleted = highestLevelCompleted;
-//   this.currentLevel = currentLevel;
-//   this.totalWins = totalWins;
-//   this.totalLosses = totalLosses;
+  let savedPlayer = localStorage.getItem('storedPlayer');
  
-// }
+  if (savedPlayer) {
+    playerInStorage = true;
+    console.log('storage is full');
+    form.setAttribute("class", "dont-use");
+  // turn the potential orders back into Plain old JavaScript objects
+  let player = JSON.parse(savedPlayer);
+    
+// turn them back into instances of products
+// run the data back througgh the constructor again - REINSTANTIATE
+
+    
+      // extract values from the POJOs
+      playerName = player.playerName;
+      avatarChoice = player.avatar;
+      attack = player.attack;
+      defense = player.defense;
+      specialAttack = player.specialAttack;
+      healthPoints = player.healthPoints;
+      highestLevelCompleted = player.highestLevelCompleted;
+      currentLevel = player.currentLevel;
+      totalWins = player.totalWins;
+      totalLosses = player.totalLosses;
+      
+    
+  // PASS VALUES FROM POJO TO THE CONSTRUCTOR HELPER
+      newPlayer = new Player(playerName, avatarChoice, attack, defense, specialAttack, healthPoints, highestLevelCompleted, currentLevel, totalWins, totalLosses);
+    
+}
+  // IF NO PLAYER IN MEMORY TAKE IN FORM INFO AND USE RANDOMIZER TO MAKE PLAYER, DONT NEED TO PASS IN KEYS WITH DEFAULT VALUES
+  else {
+    form.addEventListener('submit', handleSubmit);
+  
+  }
+}
 
 
-
-// // //HELPER CONSTRUCTOR - TAKES IN LOCAL STORAGE FIRST
-
-// // function buildPlayer() {
-// //   ////check to see if there are players in memory
-// //   let savedPlayer = localStorage.getItem('storedPlayer');
-// //   console.log('storage is full');
-// //   if (savedPlayer) {
-// //     // turn the potential orders back into Plain old JavaScript objects
-// //     let parsedPlayer = JSON.parse(savedPlayer);
-// //     // turn them back into instances of products
-// //     // run the data back througgh the constructor again - REINSTANTIATE
-
-// //     for (let player of parsedPlayer) {
-// //       console.log(player);
-// //       // extract values from the POJOs
-// //       playerName = player.playerName;
-// //       attack = player.attack;
-// //       defense = player.defense;
-// //       specialAttack = player.specialAttack;
-// //       healthpoints = player.healthPoints;
-// //       highestLevelCompleted = player.highestLevelCompleted;
-// //       currentLevel = player.currentLevel;
-// //       totalWins = player.totalWins;
-// //       totalLosses = player.totalLosses;
-// //       avatarChoice = player.avatar;
-
-// //       //PASS VALUES FROM POJO TO THE CONSTRUCTOR HELPER
-// //       makePlayer(playerName, avatarChoice, attack, defense, specialAttack, healthPoints, highestLevelCompleted, currentLevel, totalWins, totalLosses);
-// //     }
-// //   }
-// //   //IF NO PLAYER IN MEMORY TAKE IN FORM INFO AND USE RANDOMIZER TO MAKE PLAYER, DONT NEED TO PASS IN KEYS WITH DEFAULT VALUES
-// //   else {
-
-// //     makePlayer(newUserName, avatarChoice, randomStat(), randomStat(), randomStat());
-// //   }
-
-// //   function makePlayer() {
-
-// //     let newPlayer = new Player(newUserName, avatarChoice, randomStat(), randomStat(), randomStat());
-// //     //CAN CAPTURE PLAYERS TO ARRAY HERE, WILL NEED TO CHANGE LOCAL STORAGE TO STORE ARRAY
-// //     console.log(newPlayer);
-// //     return newPlayer;
-// //   }
-// // console.log(newPlayer);
-
-
+  buildPlayer();
 // //   //NPC CONSTRUCTOR
 
 // //   function Boss(attack, defense, specialAttack, imageURL) {
@@ -112,40 +107,42 @@ form.addEventListener('submit', handleSubmit);
 // //   console.log(makeBoss());
 
 
-// //   //RANDOMIZER FOR PLAYER AND BOSS STATS - CAN WE USE THE SAME ONE FOR GAMEPLAY?
+  //RANDOMIZER FOR PLAYER AND BOSS STATS - CAN WE USE THE SAME ONE FOR GAMEPLAY?
 
-// //   function randomStat() {
+  function randomStat() {
 
-// //     return Math.floor(Math.random() * 11);
-// //     //THIS RETURNS A VALUE BETWEEN 0 and 10, DO WE WANT A MIN?
-// //   }
+    return Math.floor(Math.random() * 11);
+    //THIS RETURNS A VALUE BETWEEN 0 and 10, DO WE WANT A MIN?
+  }
 
-//   //START FIGHT BUTTON - USED BOTH FOR FIRST FIGHT AND RESTART FIGHT 
-//   //BUTTON WORKS - NEED TO TEST STORAGE
+  //START FIGHT BUTTON - USED BOTH FOR FIRST FIGHT AND RESTART FIGHT 
+  //BUTTON WORKS - NEED TO TEST STORAGE
 
-//  const newPlayer = {
-//   healthpoints: 100,
-//   losses: 0
-// }
+function handleClick(e){
+  e.preventDefault();
+  startFight();
 
 
-//  document.getElementById("fight").onclick = function() {startFight()};
-//   function startFight(newPlayer) {
-//     this.healthpoint = 100;
-//     this.losses++;
-//     console.log(newPlayer);
-//     document.getElementById("fight").innerHTML = "Fight Again";
-//     storePlayer(newPlayer); 
+}
+
+
+  function startFight() {
+    newPlayer.healthPoints = 100;
+    newPlayer.losses++;
+    console.log(newPlayer);
+    //getElementById("fight").innerHTML = "Fight Again";
+    storePlayer(); 
     
-//   }
+  }
 
-//   function storePlayer(newPlayer) {
-//     let stringifiedPlayer = JSON.stringify(newPlayer);
-//     console.log(stringifiedPlayer);
-//     localStorage.setItem('storedPlayer', stringifiedPlayer);
-//   }
+  function storePlayer() {
+    console.log(newPlayer);
+    let stringifiedPlayer = JSON.stringify(newPlayer);
+    console.log(stringifiedPlayer);
+    localStorage.setItem('storedPlayer', stringifiedPlayer);
+  }
 
-//   document.getElementById("fight").addEventListener("click", startFight);
+  document.getElementById("fight").addEventListener("click", startFight);
 
 
 
