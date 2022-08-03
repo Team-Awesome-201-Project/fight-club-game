@@ -6,3 +6,23 @@ function Render() {
 
 
 }
+
+
+
+
+
+
+
+
+//FIGHT ACTION SELECTION FORM
+let form = document.getElementById('newUser');
+
+function handleSubmit(event) {
+  event.preventDefault();
+  clickAllowed = parseInt(event.target.newUser.value);
+  form.reset();
+}
+
+form.addEventListener('submit', handleSubmit);
+
+
