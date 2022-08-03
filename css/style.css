@@ -1,4 +1,5 @@
 * {
+
   box-sizing: border-box;
   }
   .layout {
@@ -39,3 +40,40 @@
   }
 
 
+box-sizing: border-box;
+}
+.layout {
+  width: 450px;
+  height: 600px;
+
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
+}
+
+.header { grid-area: header; }
+.leftSide { 
+  grid-area: leftSide;
+padding-bottom: 10px; }
+.body { grid-area: body; }
+.rightSide {
+  grid-area: rightSide;
+}
+.footer { 
+  grid-area: footer;
+padding-bottom: em; }
+
+/* main{
+  
+} */
+
+
+
+.test3 {
+  display: none;
+}
