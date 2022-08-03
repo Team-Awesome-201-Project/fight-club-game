@@ -26,6 +26,12 @@ padding-bottom: 10px; }
   grid-area: footer;
 padding-bottom: em; }
 
-main{
+/* main{
   
+} */
+
+
+
+.test3 {
+  display: none;
 }
