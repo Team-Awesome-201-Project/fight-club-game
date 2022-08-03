@@ -26,8 +26,7 @@ let specialMove = document.querySelector('#moveSection button:nth-child(3)');
 function getMoveChoice(event) {
 console.log(event.target.id);
   if (event.target.id === 'moveSection') {
-
-      alert('Move or be moved.');
+        alert('Move or be moved.');
   }
   let moveChoice = event.target.id;
   return moveChoice;
