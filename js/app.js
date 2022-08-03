@@ -81,30 +81,34 @@ function buildPlayer() {
 
 
   buildPlayer();
-// //   //NPC CONSTRUCTOR
 
-// //   function Boss(attack, defense, specialAttack, imageURL) {
-// //     this.attack = attack;
-// //     this.defense = defense;
-// //     this.specialAttack = specialAttack;
-// //     this.healthPoints = 100;
-// //     this.image = imageURL;
-// //   }
+  //NPC CONSTRUCTOR
+
+  function Boss(attack, defense, specialAttack, imageURL) {
+    this.attack = attack;
+    this.defense = defense;
+    this.specialAttack = specialAttack;
+    this.healthPoints = 100;
+    this.image = imageURL;
+  }
 
 
-// //   //HELPER FUNCTION TO INSTANTIATE BOSSES AND PUT THEM IN AN ARRAY RANDOMIZER WILL ENSURE THAT BOSS STATS CHANGE EVERY GAME INSTANCE
-// //   //BOSS DIFFICULTY COULD BE CONTROLLED BY MODIFYING HOW BOSSES ARE CALLED WITH A LOOP TO CHANGE THE RANDOMIZER
+  //HELPER FUNCTION TO INSTANTIATE BOSSES AND PUT THEM IN AN ARRAY RANDOMIZER WILL ENSURE THAT BOSS STATS CHANGE EVERY GAME INSTANCE
+  //BOSS DIFFICULTY COULD BE CONTROLLED BY MODIFYING HOW BOSSES ARE CALLED WITH A LOOP TO CHANGE THE RANDOMIZER
 
-// //   function makeBoss(attack= randomStat(), defense = randomStat(), specialAttack = randomStat(), imageURL = "images/angry-man.jpg") {
+  function makeBoss(attack= randomStat(), defense = randomStat(), specialAttack = randomStat(), imageURL = "images/angry-man.jpg") {
 
-// //     newBoss = new Boss(attack, defend, specialAttack, imageURL);
-// //     console.log(newBoss);
-// //     bossArr.push(newBoss);
-// //     return bossArr;
+    newBoss = new Boss(attack, defend, specialAttack, imageURL);
+    console.log(newBoss);
+    bossArr.push(newBoss);
+    return bossArr;
 
-// //   }
+  }
 
-// //   console.log(makeBoss());
+   console.log(makeBoss());
+   console.log(makeBoss());
+   console.log(makeBoss());
+   console.log(makeBoss());
 
 
   //RANDOMIZER FOR PLAYER AND BOSS STATS - CAN WE USE THE SAME ONE FOR GAMEPLAY?
@@ -130,7 +134,7 @@ function handleClick(e){
     newPlayer.healthPoints = 100;
     newPlayer.losses++;
     console.log(newPlayer);
-    //getElementById("fight").innerHTML = "Fight Again";
+    getElementById("fight").innerHTML = "Fight Again";
     storePlayer(); 
     
   }
