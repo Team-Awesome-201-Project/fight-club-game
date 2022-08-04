@@ -56,16 +56,16 @@ function buildPlayer() {
 
     
       // extract values from the POJOs
-      playerName = player.playerName;
-      avatarChoice = player.avatar;
-      attack = player.attack;
-      defense = player.defense;
-      specialAttack = player.specialAttack;
-      healthPoints = player.healthPoints;
-      highestLevelCompleted = player.highestLevelCompleted;
-      currentLevel = player.currentLevel;
-      totalWins = player.totalWins;
-      totalLosses = player.totalLosses;
+      let playerName = player.playerName;
+      let avatarChoice = player.avatar;
+      let attack = player.attack;
+      let defense = player.defense;
+      let specialAttack = player.specialAttack;
+      let healthPoints = player.healthPoints;
+      let highestLevelCompleted = player.highestLevelCompleted;
+      let currentLevel = player.currentLevel;
+      let totalWins = player.totalWins;
+      let totalLosses = player.totalLosses;
       console.log(totalLosses);
     
   // PASS VALUES FROM POJO TO THE CONSTRUCTOR HELPER
@@ -98,15 +98,15 @@ function buildPlayer() {
 
   function makeBoss(attack= randomStat(), defense = randomStat(), specialAttack = randomStat(), imageURL = "images/angry-man.jpg") {
 
-    newBoss = new Boss(attack, defend, specialAttack, imageURL);
+    newBoss = new Boss(attack, defense, specialAttack, imageURL);
     console.log(newBoss);
     bossArr.push(newBoss);
     return bossArr;
 
   }
 
-  //  console.log(makeBoss());
-  //  console.log(makeBoss());
+    console.log(makeBoss(randomStat(), randomStat(),randomStat(), 'image here'));
+   // console.log(makeBoss());
   //  console.log(makeBoss());
   //  console.log(makeBoss());
 
@@ -118,6 +118,74 @@ function buildPlayer() {
     return Math.floor(Math.random() * 11);
     //THIS RETURNS A VALUE BETWEEN 0 and 10, DO WE WANT A MIN?
   }
+
+  Boss.prototype.newHealth = function (playerIncDmg) {
+    this.bHealthPoints -= playerIncDmg;
+    if (this.bHealthPoints <= 0) {
+      this.bHealthPoints = 0;
+    }
+  }
+  Boss.prototype.attackStart = function (min, max) {
+    console.log('boss chose to attck!');
+    min = Math.ceil(min);
+    max = Math.ceil(max);
+    let crit = criticalStart();
+    if (crit === false) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    else if (crit === true) {
+        return Math.floor(Math.random() * (max - min + 1) + min) * 2;
+    }
+  }
+  Boss.prototype.specialAttackStart = function (min, max) {
+    console.log('boss chose to attck!');
+    min = Math.ceil(min);
+    max = Math.ceil(max);
+    let crit = criticalStart();
+    if (crit === false) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    else if (crit === true) {
+        return Math.floor(Math.random() * (max - min + 1) + min) * 2;
+    }
+  }
+
+  Player.prototype.newHealth = function (bossIncDmg) {
+    this.healthPoints -= bossIncDmg;
+    if (this.healthPoints <= 0) {
+      this.healthPoints = 0;
+    }
+  }
+  Player.prototype.attackStart = function (min, max) {
+    console.log('player chose to attck!');
+    min = Math.ceil(min);
+    max = Math.ceil(max);
+    let crit = criticalStart();
+    if (crit === false) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    else if (crit === true) {
+        return Math.floor(Math.random() * (max - min + 1) + min) * 2;
+    }
+    console.log()
+  }
+  Player.prototype.specialAttackStart = function (min, max) {
+    console.log('boss chose to attck!');
+    min = Math.ceil(min);
+    max = Math.ceil(max);
+    let crit = criticalStart();
+    if (crit === false) {
+        return bossIncDmg += Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    else if (crit === true) {
+        return bossIncDmg += Math.floor(Math.random() * (max - min + 1) + min) * 2;
+    }
+  }
+  Player.prototype.defendStart = function () {
+    return playerDefense = true;
+  }
+
+
 
   //START FIGHT BUTTON - USED BOTH FOR FIRST FIGHT AND RESTART FIGHT 
   //BUTTON WORKS - NEED TO TEST STORAGE
@@ -155,25 +223,26 @@ document.getElementById("fight").addEventListener("click", handleClick);
 
 
 
-//   //connect move buttons code to the DOM
-//   let moveSection = document.querySelector('#moveSection');
-//   let attack = document.querySelector('#moveSection button:first-child');
-//   let defend = document.querySelector('#moveSection button:nth-child(2)');
-//   let specialAttack = document.querySelector('#moveSection button:nth-child(3)');
+  //connect move buttons code to the DOM
+  let moveSection = document.querySelector('#moveSection');
+  let attack = document.querySelector('#moveSection button:first-child');
+  let defend = document.querySelector('#moveSection button:nth-child(2)');
+  let specialAttack = document.querySelector('#moveSection button:nth-child(3)');
 
   
   
-//   //FIGHT ACTION SELECTION FUNCTION
-//   function getMoveChoice(event) {
-//     if (event.target.id === '#moveSection') {
-//       alert('Move or be moved.');
-//     }
-//     let moveChoice = event.target.id;
-//     console.log(event.target.id);
-//     console.log(moveChoice);
-//     return moveChoice;
-//   }
-//   moveSection.addEventListener('click', getMoveChoice);
+  //FIGHT ACTION SELECTION FUNCTION
+  function getMoveChoice(event) {
+    if (event.target.id === '#moveSection') {
+      alert('Move or be moved.');
+    }
+    let moveChoice = event.target.id;
+    console.log(event.target.id);
+    console.log(moveChoice);
+    gameLogic(moveChoice);
+
+  }
+  moveSection.addEventListener('click', getMoveChoice);
 
 
 //RENDERS GAMEPLAY AREA 
