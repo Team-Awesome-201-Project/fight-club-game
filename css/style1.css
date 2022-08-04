@@ -1,0 +1,80 @@
+
+.layout {
+  width: max-content;
+  height: max-content;
+  background-image: url("https://images.pexels.com/photos/207142/pexels-photo-207142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") ;
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
+
+  
+}
+fieldset {
+  grid-area: leftSide;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end:3;
+
+}
+
+.header { grid-area: header; }
+.leftSide { 
+  grid-area: leftSide;
+  height: 250px;
+  width: 100px;
+padding-bottom: 10px; }
+.body { 
+  height: 375px;
+  width: 300px;
+  grid-area: body; 
+border: 40px solid black}
+.rightSide {
+  grid-area: rightSide;
+}
+.footer { 
+  grid-area: footer;
+padding-bottom: em; }
+
+button{
+  color: rgb(53, 109, 11);
+  background-image: url("https://img.favpng.com/9/7/25/punch-fist-stock-photography-png-favpng-UG2RwyimywQTwJrbJi9EqcjER.jpg");
+background-size:48px
+}  
+
+header{
+ grid-column-start: 2;
+ grid-column-end: 3;
+  
+}
+img {
+  max-width: 100% ;
+  max-height: 100%;
+  object-fit: contain;
+}
+main {
+grid-column-start:1 ;
+grid-column-end:2;
+grid-row-start:2;
+grid-row-end:3
+}
+
+ .leftSide{
+  grid-column-start: 1;
+  grid-column-end:2;
+  grid-row-start: 2;
+  grid-row-end:3;
+ }
+div .headerInner{
+  background-image: url("https://images.pexels.com/photos/207142/pexels-photo-207142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  height:375px;
+width:fit-content;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+grid-template-rows: 10% 60% 20% 10%;
+}

@@ -1,10 +1,55 @@
 * {
+
   box-sizing: border-box;
 }
+
+=======
+
+  box-sizing: border-box;
+  }
+  .layout {
+    width: 900px;
+    height: 1200px;
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
+    grid-template-rows: 20% 45% 25% 10%;
+    gap: 8px;
+  }
+  .header { grid-area: header; }
+  .leftSide {
+    grid-area: leftSide;
+  padding-bottom: 10px; }
+  .body { grid-area: body; }
+  .rightSide {
+    grid-area: rightSide;
+  }
+  .footer {
+    grid-area: footer;
+  padding-bottom: em; }
+
+
+
+.leftSide {
+ display: none;
+}
+
+
+
+
+  
+  #newUser input[type=radio] {
+    display: none;
+  }
+  input:checked + label img{
+    border: 4px solid red;
+  }
+
+
 
 .layout {
   width: 450px;
   height: 600px;
+
 
   display: grid;
   grid:

@@ -2,8 +2,11 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/reset.css" />
+ <link rel="stylesheet" href="css/reset.css" />
+ <link rel="stylesheet" href="css/style.css" />
+ <link rel="stylesheet" href="css/style1.css" />
+
+ 
   <title>Fight Club Game</title>
 
 </head>
@@ -11,79 +14,66 @@
 <body>
 
   <section class="layout">
-    <div class="header">Welcome to Fight Club</div>
 
-    <!--This is the form for choosing a new user-->
-    <div class="leftSide">
-      <header>
-        <h3>New User</h3>
-      </header>
-      <form id="newUser" class="use">
-        <fieldset>
-          <label> Enter User Name
-            <input type="text" name="newUserName">
-          </label>
-          <section id="avatarImages">
-            <input type="radio" id="avatar1" name="chooseAvatar" value="avatar1" checked>
-            <label for="avatar1"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
-                width="150px"></label>
-            <input type="radio" id="avatar2" name="chooseAvatar" value="avatar2">
-            <label for="avatar2"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
-                width="150px"></label>
-            <input type="radio" id="avatar3" name="chooseAvatar" value="avatar3">
-            <label for="avatar3"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
-                width="150px"></label>
-            <input type="radio" id="avatar4" name="chooseAvatar" value="avatar4">
-            <label for="avatar4"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
-                width="150px"></label>
-          </section>
-        </fieldset>
-        <button type="submit">Submit</button>
-      </form>
+  <header><h1> <div class="header">Welcome to Fight Club</div></h1></header>
+ <section id="leftside>
+ <form id="newUser">
+    <header>
+     <h3>New User</h3>
+    </header>
+ 
+    <fieldset>
+      <label> Enter User Name
+        <input type="text" name="newUser">
+      </label>
+     
+        <input type="radio" id="avatar1" name="chooseAvatar" value="avatar1" checked>
 
-
-    </div>
-    <!--This is the HTML for choosing your move-->
-    <section id="moveSection" class="use">
-
-      <button id="attack">Attack</button>
-      <button id="defend">Defend</button>
-      <button id="specialAttack">Special Attack</button>
-    </section>
-    <section class="gamePlayScreen">
-
-    </section>
-
-    <section id="leaderBoard" class="use">
-      <p>testtest</p>
-    </section>
-    <button id="seeStats">View Stats</button>
-    <!--This is the button for starting and restarting fights-->
-
-
-    <button id="fight" class="use">Don't Talk About It</button>
-
-
-
-
-
-
-
-
-
-
-
+        <label for="avatar1"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
+            width="150px"></label>
+        <input type="radio" id="avatar2" name="chooseAvatar" value="avatar2">
+        <label for="avatar2"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
+            width="150px"></label>
+        <input type="radio" id="avatar3" name="chooseAvatar" value="avatar3">
+        <label for="avatar3"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
+            width="150px"></label>
+        <input type="radio" id="avatar4" name="chooseAvatar" value="avatar4">
+        <label for="avatar4"><img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg" alt="FightMan"
+            width="150px"></label>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+ </section>
   </section>
 
 
+<!--BUTTON FOR STARTING AND RESTARTING FIGHT-->
+ <button onclick="Render()">Start:Don't Talk About It</button>
+
+
+  <section class="gamePlayScreen">
+  
+  <!-- GAMEPLAY IS RENDERED IN THIS SECTION-->
+  
+  </section>
+  <section id="leaderboard" class="use">
+  
+  </section>
+  <button id=“seeStats”>View Stats</button>
+
+ 
   <footer>
-    <p> Copyright &copy 2022 - All Rights Reserved</p>
+    <a href="https://placeholder.com"><img src=https://via.placeholder.com/450x60/ddd />
 
   </footer>
-  <!--This line of code imports the JSON handler for the local storage-->
-  <script src=js/fightsequence.js></script>
+  </body>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script>
 
   <script src="js/app.js"></script>
-</body>
 
 </html>
+     
+
+
