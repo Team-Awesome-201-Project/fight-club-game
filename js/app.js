@@ -4,7 +4,7 @@ let form = document.getElementById('newUser');
 
 function handleSubmit(event) {
   event.preventDefault();
-  let newUserName = event.target.newUser.value;
+  let newUserName = event.target.newUserName.value;
   let avatarChoice = event.target.chooseAvatar.value;
   form.reset();
   console.log(`This is the new character ${newUserName}, and his image address is ${avatarChoice}`);
@@ -66,7 +66,7 @@ function buildPlayer() {
       currentLevel = player.currentLevel;
       totalWins = player.totalWins;
       totalLosses = player.totalLosses;
-      
+      console.log(totalLosses);
     
   // PASS VALUES FROM POJO TO THE CONSTRUCTOR HELPER
       newPlayer = new Player(playerName, avatarChoice, attack, defense, specialAttack, healthPoints, highestLevelCompleted, currentLevel, totalWins, totalLosses);
@@ -134,13 +134,13 @@ function handleClick(e){
 
   function startFight() {
     newPlayer.healthPoints = 100;
-    newPlayer.losses++;
+    newPlayer.totalLosses++;
     document.getElementById("fight").innerHTML="Fight Again";
     console.log(newPlayer);
     
     storePlayer(); 
-    
   }
+  
 
   function storePlayer() {
     console.log(newPlayer);
@@ -176,23 +176,10 @@ document.getElementById("fight").addEventListener("click", handleClick);
 //   moveSection.addEventListener('click', getMoveChoice);
 
 
-//   //WHAT DOES THIS RENDER?
+//RENDERS GAMEPLAY AREA 
 
-//   //   function Render() {
-
-//   //     let getHeader = document.querySelector(".header");
-//   //     let getLeftside = document.querySelector(".leftSide");
-//   //     let getBody = document.querySelector('.body');
-//   //     let getFooter = document.querySelector('.footer');
-//   //     let getMain = document.querySelector('.main')
-//   //     getHeader.innerHTML = '<div class="headerInner"><p id="test">HP: Enemy</p>' + '<img src="https://via.placeholder.com/300x375/ddd"></div>';
-//   //     getLeftside.innerHTML = '<p>HP: User</p>' + '<img src="https://via.placeholder.com/300x375/ddd">';
-//   //     getBody.innerHTML = '<button type="button">Ablilty1</button>' + '<button type="button">Ablilty2</button>' + '<button type="button">Ablilty3</button>' + '<button type="button">Ablilty4</button>'
-//   //     getFooter.innerHTML = '<p>Good luck</p>'
-//   //     getMain.innerHTML = '<p class="test3">Test2</p>'
-
-
-//   //   }
-
-//   // }
+function Render() {
+  let gamePlayScreen = document.querySelector("gamePlayScreen");
+  gamePlayScreen.innerHTML = 'Section<div class=“headerInner”><pid=“test”>HP: Enemy</p>' + '<img src=“https://via.placeholder.com/300x375/ddd”></div></section><section><div class=“headerInner”><pid=“test”>HP: Player</p>’ + ‘<img src=“https://thumbs.dreamstime.com/z/tough-man-18388218.jpg“></div></section>';
+ }
 
