@@ -1,44 +1,46 @@
-html {
-  background: url("/images/table-light.jpg") no-repeat;
-  background-size: cover;
+* {
+  box-sizing: border-box;
 }
 
-.parentContainer {
-  display: grid;
-  grid-template-columns: 20% 30% 50%;
-  grid-template-rows: 10% 55% 20% 2%;
+ .parentContainer{
+width: 85%;
+height: 720px;
+margin: 0 auto;
 }
 
+.combatLog {
+  opacity: 0.8;  background-color: aquamarine;
+  height: 100%;
+  width: 50%;
+}
 h1 {
-  grid-column-start: 1;
-  grid-column-end: 4;
+  opacity: 0.8;
+  background-color: brown;
 }
 
-footer {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 4;
-  grid-row-end: 5;
+#leaderBoard {
+  opacity: 0.8;  background-color: red;
+  height: 100%;
+  width: 50%;
 }
 
 .submitForm {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  opacity: 0.8;  background-color: beige;
 }
 
 .dataBlock {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  display: flex;
+  opacity: 0.8;  background-color: green;
 }
 
-.gamePlayScreen {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
+footer {
+  opacity: 0.8;  background-color: blueviolet;
 }
+
+.dont-use {
+    display: none;
+
+  }
+
+  .gamePlayScreen {
+    opacity: 0.8;    background-color: yellow;
+  }
