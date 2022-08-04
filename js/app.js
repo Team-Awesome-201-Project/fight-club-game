@@ -13,8 +13,8 @@ let bossArr = [];
 
 function Render() {
 
-  let gamePlayScreen = document.querySelector(".gamePlayScreen")
-  gamePlayScreen.innerHTML = 'Section<div class="headerInner"><p id="test">HP: Enemy</p>' + '<img src="https://via.placeholder.com/300x375/ddd"></div></section><section><div class="headerInner"><p id="test">HP: Player</p>' + '<img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg""></div></section><button type="button" onclick="gameLogic()">Attack</button>' + '<button type="button">Defense</button>' + '<button type="button">S Attack</button>';
+  let gamePlayScreen = document.querySelector(".gamePlayScreen");
+  gamePlayScreen.innerHTML = 'Section<div class="headerInner"><p id="test">HP: Enemy</p>' + '<img src="https://via.placeholder.com/300x375/ddd"></div></section><section><div class="headerInner"><p id="test">HP: Player</p>' + '<img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg""></div></section>';
 
 
 }
