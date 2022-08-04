@@ -250,30 +250,31 @@ document.getElementById("fight").addEventListener("click", handleClick);
 
 function Render() {
   let gamePlayScreen = document.querySelector("gamePlayScreen");
-  gamePlayScreen.innerHTML = 'Section<div class=“headerInner”><pid=“test”>HP: Enemy</p>' + '<img src=“https://via.placeholder.com/300x375/ddd”></div></section><section><div class=“headerInner”><pid=“test”>HP: Player</p>’ + ‘<img src=“https://thumbs.dreamstime.com/z/tough-man-18388218.jpg“></div></section>';
+  gamePlayScreen.innerHTML = 'Section<div class=“headerInner”><pid=“test”>HP: Enemy</p>' + '<img src=“https://via.placeholder.com/300x375/ddd”></div></section><section><div class=“headerInner”><pid=“test”>HP: Player</p> + <img src=“https://thumbs.dreamstime.com/z/tough-man-18388218.jpg“></div></section>';
  }
 
 
  function renderleaderBoard() {
   let leaderBoard = document.querySelector("#leaderBoard");
-  leaderBoard.innerHTML = `<ul><li>${newPlayer.totalWins}</li><li>${newPlayer.totalLosses}</li></ul>`
+  leaderBoard.innerHTML = `<ul><li>Player total wins: ${newPlayer.totalWins}</li><li>Player Total loses:${newPlayer.totalLosses}</li></ul>`
  }
 
  renderleaderBoard();
 
  
-  function hideLeaderBoard(event){
+  function hideLeaderBoard(event){   
 
-   
 
- 
-    let boardChange = document.getElementById("leaderBoard");
-
-    if(boardChange.attribute("class","use") === true){
-      boardChange.setAttribute("class","dont-use");
-    }
-    
+let x = document.getElementById("leaderBoard");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
+}
+
+
+
  
 
 
