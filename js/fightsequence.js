@@ -8,9 +8,12 @@ let combatLogArray = [];
 function criticalStart() {
     let crit = Math.floor(Math.random() * 100);
     if (crit <= 10) {
+        console.log(crit);
         return true;
     }
+    console.log(crit);
     return false;
+
 }
 
 function bossPickRandomizer() {
@@ -39,14 +42,15 @@ function gameLogic(playerButtonClick) {
 // Damage to boss
     boss.newHealth(playerIncDmg);
     console.log(`Boss hit for: ${playerIncDmg}`);
-    console.log(`Boss has: ${boss.bHealthPoints} health left`);
+    console.log(`Boss has: ${boss.healthPoints} health left`);
 
-    if (boss.bHealthPoints === 0) {
+    if (boss.healthPoints === 0) {
         console.log('Win!');
         console.log('Reminder to update local storage!');
         console.log('Reminder to call new boss');
         // Update local storage
         // Call next boss
+        
     } else {
         console.log('Boss: Now its my turn');
     }
@@ -54,11 +58,11 @@ function gameLogic(playerButtonClick) {
 
 // Boss fight sequence
     if (bossMove === 1) {
-        bossIncDmg += boss.attackStart(boss.bAttack[0], boss.bAttack[1])
-        console.log(`Player does: ${bossIncDmg} damage`);
+        bossIncDmg += boss.attackStart(boss.attack[0], boss.attack[1])
+        console.log(`Boss does: ${bossIncDmg} damage`);
     } else {
-        bossIncDmg += boss.specialAttackStart(boss.bSpecialAttack[0], boss.bSpecialAttack[1])
-        console.log(`Player does: ${bossIncDmg} damage`);
+        bossIncDmg += boss.specialAttackStart(boss.specialAttack[0], boss.specialAttack[1]);
+        console.log(`Boss does: ${bossIncDmg} damage`);
         console.log('Ahhhahaha, how did that feel!?');
     }
 
