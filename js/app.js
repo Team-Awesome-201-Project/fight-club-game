@@ -262,8 +262,19 @@ function Render() {
  renderleaderBoard();
 
  
-  function hideLeaderBoard(){
-    form.setAttribute("class", "dont-use");
-    let changeBoard =
+  function hideLeaderBoard(event){
+
+   
+
+ 
+    let boardChange = document.getElementById("leaderBoard");
+
+    if(boardChange.attribute("class","use") === true){
+      boardChange.setAttribute("class","dont-use");
+    }
+    
   }
+ 
+
+
   document.getElementById("seeStats").addEventListener("click", hideLeaderBoard);
