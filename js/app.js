@@ -1,31 +1,26 @@
-//DECLARE GLOBAL VARIABLES
 
-let player;
-// let chr1 = document.getElementById('avatar1')
-// let chr2 = document.getElementById('avatar2')
-// let chr3 = document.getElementById('avatar3')
-// let chr4 = document.getElementById('avatar4')
-let boss;
-let bossArr = [];
+//USER INPUT FORM
+let form = document.getElementById('newUser');
 
-
-
-
-function Render() {
-
-  let gamePlayScreen = document.querySelector(".gamePlayScreen");
-  gamePlayScreen.innerHTML = 'Section<div class="headerInner"><p id="test">HP: Enemy</p>' + '<img src="https://via.placeholder.com/300x375/ddd"></div></section><section><div class="headerInner"><p id="test">HP: Player</p>' + '<img src="https://thumbs.dreamstime.com/z/tough-man-18388218.jpg""></div></section>';
-
-
+function handleSubmit(event) {
+  event.preventDefault();
+  let newUserName = event.target.newUserName.value;
+  let avatarChoice = event.target.chooseAvatar.value;
+  form.reset();
+  console.log(`This is the new character ${newUserName}, and his image address is ${avatarChoice}`);
+  newPlayer = new Player(newUserName, avatarChoice, randomStat(), randomStat(), randomStat());
+  console.log(newPlayer);
 }
+// //form is working
 
+// //DECLARE GLOBAL VARIABLES
 
+let newPlayer = {};
+let boss = {};
+let bossArr = [];
+playerInStorage = false;
 
-
-
-
-
-
+ //USER CONSTRUCTOR
 
 function Player(playerName, avatarChoice, attack, defense, specialAttack, highestLevelCompleted = 0, currentLevel = 0, totalWins = 0, totalLosses = 0) {
   this.playerName = playerName;
@@ -42,17 +37,17 @@ function Player(playerName, avatarChoice, attack, defense, specialAttack, highes
 }
 
 
-// //USER INPUT FORM
-let form = document.getElementById('newUser');
-function handleSubmit(event) {
+// // //USER INPUT FORM
+// let form = document.getElementById('newUser');
+// function handleSubmit(event) {
   
-  event.preventDefault();
-  let newUser = event.target.newUser.value;
-  let avatarChoice = event.target.chooseAvatar.value;
-  form.reset();
-  console.log(avatarChoice);
-  return;
-}
+//   event.preventDefault();
+//   let newUser = event.target.newUser.value;
+//   let avatarChoice = event.target.chooseAvatar.value;
+//   form.reset();
+//   console.log(avatarChoice);
+//   return;
+// }
 
 form.addEventListener('submit', handleSubmit);
 
