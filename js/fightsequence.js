@@ -1,11 +1,9 @@
 'use strict';
 
 let combatLogArray = [];
+let combatLog = document.querySelector(".combatLog")
 
 
-
-
-console.log(boss1.bAttack[0]);
 
 
 
@@ -17,7 +15,6 @@ function criticalStart() {
     }
     console.log(crit);
     return false;
-
 
 }
 
@@ -33,56 +30,32 @@ function gameLogic(playerButtonClick) {
     let playerDefense = false;
     let bossMove = bossPickRandomizer();
 
-// Player fight sequence
+    // Player fight sequence
     if (playerButtonClick = 'attack') {
         playerIncDmg += newPlayer.attackStart(newPlayer.attack[0], newPlayer.attack[1]);
         console.log(`Player does: ${playerIncDmg} damage`);
+        // combatLog.innerHTML=`Player does: ${playerIncDmg} damage`;
+        // let logOne = document.createElement('p');
+        // logOne.appendChild('combatLog');
+        // logOne.textContent("test2")
+        
+
+
     } else if (playerButtonClick = 'specialAttack') {
         playerIncDmg += newPlayer.specialAttackStart(newPlayer.specialAttack[0], specialAttack[1]);
-        console.log(playerIncDmg);
+        console.log(`Player does: ${playerIncDmg} damage`);
+        
     } else if (playerButtonClick = 'defend') {
         player.defendStart();
-    }
 
-// Damage to boss
+    }
+    // Damage to boss
     boss.newHealth(playerIncDmg);
     console.log(`Boss hit for: ${playerIncDmg}`);
     console.log(`Boss has: ${boss.healthPoints} health left`);
 
+
     if (boss.healthPoints === 0) {
-=======
-}
-
-function bossPickRandomizer() {
-    return Math.floor(Math.random() * (2 - 1 + 1) + 1);
-}
-
-function gameLogic(playerButtonClick) {
-    let player = '';
-    let boss = '';
-    let playerIncDmg = 0;
-    let bossIncDmg = 0;
-    let playerDefense = false;
-    let bossMove = bossPickRandomizer();
-
-// Player fight sequence
-    if (playerButtonClick = 'attack') {
-        playerIncDmg += player1.attackStart(player1.attack[0], player1.attack[1]);
-        console.log(`Player does: ${playerIncDmg} damage`);
-    } else if (playerButtonClick = 'specialAttack') {
-        playerIncDmg += player1.specialAttackStart(player1.specialAttack[0], specialAttack[1]);
-        console.log(playerIncDmg);
-    } else if (playerButtonClick = 'defend') {
-        player.defendStart();
-    }
-
-// Damage to boss
-    boss1.newHealth(playerIncDmg);
-    console.log(`Boss hit for: ${playerIncDmg}`);
-    console.log(`Boss has: ${boss1.bHealthPoints} health left`);
-
-    if (boss1.bHealthPoints === 0) {
-
         console.log('Win!');
         console.log('Reminder to update local storage!');
         console.log('Reminder to call new boss');
@@ -94,22 +67,21 @@ function gameLogic(playerButtonClick) {
     }
 
 
-// Boss fight sequence
+    // Boss fight sequence
     if (bossMove === 1) {
-
         bossIncDmg += boss.attackStart(boss.attack[0], boss.attack[1])
         console.log(`Boss does: ${bossIncDmg} damage`);
     } else {
         bossIncDmg += boss.specialAttackStart(boss.specialAttack[0], boss.specialAttack[1]);
         console.log(`Boss does: ${bossIncDmg} damage`);
+        console.log('Ahhhahaha, how did that feel!?');
+    }
 
-// Damage to player
-
+    // Damage to player
     newPlayer.newHealth(bossIncDmg);
     console.log(`Player hit for: ${newPlayer.healthPoints}`);
 
     if (newPlayer.healthPoints === 0) {
-
         console.log('Defeat!');
         console.log('Reminder to update local storage!');
         console.log('Reminder to call to main page/un-render');
@@ -121,17 +93,4 @@ function gameLogic(playerButtonClick) {
     }
 }
 
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
-gameLogic('attack');
 
