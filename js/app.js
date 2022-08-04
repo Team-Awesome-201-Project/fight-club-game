@@ -2,23 +2,27 @@
 //USER INPUT FORM
 let form = document.getElementById('newUser');
 
+
 function handleSubmit(event) {
   event.preventDefault();
   let newUserName = event.target.newUserName.value;
   let avatarChoice = event.target.chooseAvatar.value;
   form.reset();
   console.log(`This is the new character ${newUserName}, and his image address is ${avatarChoice}`);
-  newPlayer = new Player(newUserName, avatarChoice, randomStat(), randomStat(), randomStat());
+  newPlayer = new Player(newUserName, avatarChoice, randomStat(), randomStat(), 
+  randomStat());
+  form.setAttribute("class", "dont-use");
   console.log(newPlayer);
 }
 // //form is working
 
 // //DECLARE GLOBAL VARIABLES
-
+let stringifiedPlayer = '';
 let newPlayer = {};
 let boss = {};
 let bossArr = [];
 playerInStorage = false;
+let i = 0;
 
 //USER CONSTRUCTOR
 
@@ -27,7 +31,7 @@ function Player(playerName, avatarChoice, attack, defense, specialAttack, health
   this.avatar = avatarChoice;
   this.attack = [1, 10];
   this.defense = defense;
-  this.specialAttack = [1, 10];
+  this.specialAttack = [2, 20];
   this.highestLevelCompleted = highestLevelCompleted;
   this.healthPoints = healthPoints
   this.currentLevel = currentLevel;
@@ -87,7 +91,7 @@ buildPlayer();
 function Boss(attack, defense, specialAttack, healthPoints = 100, imageURL) {
   this.attack = [1, 10];
   this.defense = defense;
-  this.specialAttack = [10, 40];
+  this.specialAttack = [2, 20];
   this.healthPoints = 100;
   // this.image = imageURL;
 }
@@ -106,11 +110,12 @@ function makeBoss(attack = randomStat(), defense = randomStat(), specialAttack =
 }
 
 console.log(makeBoss(randomStat(), randomStat(), randomStat(), 'image here'));
-// console.log(makeBoss());
-//  console.log(makeBoss());
-//  console.log(makeBoss());
 
+console.log(makeBoss(randomStat(), randomStat(), randomStat(), 'image here'));
 
+console.log(makeBoss(randomStat(), randomStat(), randomStat(), 'image here'));
+
+console.log(bossArr);
 //RANDOMIZER FOR PLAYER AND BOSS STATS - CAN WE USE THE SAME ONE FOR GAMEPLAY?
 
 function randomStat() {
@@ -205,9 +210,10 @@ function handleClick(e) {
 
 function startFight() {
   newPlayer.healthPoints = 100;
-  newPlayer.totalLosses++;
+  // newPlayer.totalLosses++;
   document.getElementById("fight").innerHTML = "Fight Again";
   console.log(newPlayer);
+  moveSection.setAttribute("class","use");
 
   storePlayer();
 }
@@ -215,7 +221,7 @@ function startFight() {
 
 function storePlayer() {
   console.log(newPlayer);
-  let stringifiedPlayer = JSON.stringify(newPlayer);
+  stringifiedPlayer = JSON.stringify(newPlayer);
   console.log(stringifiedPlayer);
   localStorage.setItem('storedPlayer', stringifiedPlayer);
 }
@@ -282,4 +288,5 @@ function hideLeaderBoard(event) {
 
 
 document.getElementById("seeStats").addEventListener("click", hideLeaderBoard);
+
 
