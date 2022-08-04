@@ -1,35 +1,44 @@
-* {
-  box-sizing: border-box;
+html {
+  background: url("/images/table-light.jpg") no-repeat;
+  background-size: cover;
 }
 
-.layout {
-  width: 450px;
-  height: 600px;
-
+.parentContainer {
   display: grid;
-  grid:
-    "header header header" auto "leftSide body rightSide" 1fr "footer footer footer" auto / auto 1fr auto;
-  gap: 8px;
+  grid-template-columns: 20% 30% 50%;
+  grid-template-rows: 10% 55% 20% 2%;
 }
 
-.header {
-  grid-area: header;
+h1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
-.leftSide {
-  grid-area: leftSide;
-  padding-bottom: 10px;
+footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
 }
 
-footer p {
-  background-color: grey;
-
-  align-self: center;
+.submitForm {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
- 
 
-.dont-use {
-    display: none;
+.dataBlock {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+}
 
-  }
-
+.gamePlayScreen {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
