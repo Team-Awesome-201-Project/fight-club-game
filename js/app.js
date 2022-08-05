@@ -300,3 +300,4 @@ function hideLeaderBoard(event) {
 
 
 document.getElementById("seeStats").addEventListener("click", hideLeaderBoard)
+
