@@ -36,9 +36,6 @@ function gameLogic(playerButtonClick) {
         playerIncDmg += newPlayer.attackStart(newPlayer.attack[0], newPlayer.attack[1]);
         console.log(`Player does: ${playerIncDmg} damage`);
         // combatLog.innerHTML=`Player does: ${playerIncDmg} damage`;
-        // let logOne = document.createElement('p');
-        // logOne.appendChild('combatLog');
-        // logOne.textContent("test2")
         
 
 
@@ -83,11 +80,11 @@ function gameLogic(playerButtonClick) {
     // Damage to player
     newPlayer.newHealth(bossIncDmg);
     console.log(`Player hit for: ${newPlayer.healthPoints}`);
-
+    combatLog.innerHTML = `<p> player does :${playerIncDmg} damage</p><p>Boss has ${boss.healthPoints} health left</p><p>Boss has done ${bossIncDmg} damage.</p><p>Player has ${newPlayer.healthPoints} left.</p>`
     if (newPlayer.healthPoints === 0) {
 
-        console.log('Defeat!');
-        console.log('Reminder to update local storage!');
+        alert('defeat')
+        newPlayer.totalLosses++ ;
         console.log('Reminder to call to main page/un-render');
         console.log('Reminder to update leaderboard');
         
@@ -98,7 +95,7 @@ function gameLogic(playerButtonClick) {
     } else {
         console.log('Player: Now its my turn');
     }
-    return;
+    
 }
 
 function gameEnd() {
@@ -107,7 +104,7 @@ function gameEnd() {
     localStorage.setItem('storedPlayer', stringifiedPlayer);
     moveSection.setAttribute("class","dont-use");
 
-    if(i < bossArr.length -1){
+    if(i < bossArr.length){
      i++; 
     }
 else {
@@ -118,21 +115,3 @@ boss = bossArr[i];
 console.log(bossArr[i]);
 }
 
-
-
-
-
-
-
-
-// function renderCombatLog() {
-//     let combatLog = document.querySelector(".combatLog")
-//     combatLog.innerHTML = `<p>Player did ${playerIncDmg}</p>${boss.healthPoints}<p></p>`
-// }
-// renderCombatLog();
-
-
-
-//   let combatBossHP = document.createElement('p');
-//   let textNode = document.createTextNode("test2");
-//   combatBossHP.appendChild(textNode);
