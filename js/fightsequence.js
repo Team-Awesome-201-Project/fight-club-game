@@ -82,7 +82,7 @@ function gameLogic(playerButtonClick) {
     // Damage to player
     newPlayer.newHealth(bossIncDmg);
     console.log(`Player hit for: ${newPlayer.healthPoints}`);
-    combatLog.innerHTML = `<p> player does :${playerIncDmg} damage</p><p>Boss has ${boss.healthPoints} health left</p><p>Boss has done ${bossIncDmg} damage.</p><p>Player has ${newPlayer.healthPoints} left.</p>`
+    combatLog.innerHTML = `<p>${newPlayer.playerName} does :${playerIncDmg} damage</p><p>Boss has ${boss.healthPoints} health left</p><p>Boss has done ${bossIncDmg} damage.</p><p>${newPlayer.playerName} has ${newPlayer.healthPoints} left.</p>`
     if (newPlayer.healthPoints === 0) {
 
         alert('defeat')
