@@ -1,6 +1,6 @@
-
 //USER INPUT FORM
 let form = document.getElementById('newUser');
+// console.log(newPlayer.avatar);
 
 
 function handleSubmit(event) {
@@ -23,15 +23,16 @@ let boss = {};
 let bossArr = [];
 playerInStorage = false;
 let i = 0;
-
+let playerCh = document.getElementById("playerImage");
+let bossCh = document.getElementById("bossImage");
 //USER CONSTRUCTOR
 
 function Player(playerName, avatarChoice, attack, defense, specialAttack, healthPoints = 100, highestLevelCompleted = 0, currentLevel = 0, totalWins = 0, totalLosses = 0) {
   this.playerName = playerName;
   this.avatar = avatarChoice;
-  this.attack = [100, 2000];
+  this.attack = [1, 10];
   this.defense = defense;
-  this.specialAttack = [1, 10];
+  this.specialAttack = [2, 20];
   this.highestLevelCompleted = highestLevelCompleted;
   this.healthPoints = healthPoints
   this.currentLevel = currentLevel;
@@ -88,32 +89,35 @@ buildPlayer();
 
 //NPC CONSTRUCTOR
 
-function Boss(attack, defense, specialAttack, healthPoints = 100, imageURL) {
+function Boss(imageURL, attack, defense, specialAttack, healthPoints = 100) {
+  this.image = imageURL;
   this.attack = [1, 10];
   this.defense = defense;
-  this.specialAttack = [1, 3];
+  this.specialAttack = [2, 20];
   this.healthPoints = 100;
-  // this.image = imageURL;
 }
 
 
 //HELPER FUNCTION TO INSTANTIATE BOSSES AND PUT THEM IN AN ARRAY RANDOMIZER WILL ENSURE THAT BOSS STATS CHANGE EVERY GAME INSTANCE
 //BOSS DIFFICULTY COULD BE CONTROLLED BY MODIFYING HOW BOSSES ARE CALLED WITH A LOOP TO CHANGE THE RANDOMIZER
 
-function makeBoss(attack = randomStat(), defense = randomStat(), specialAttack = randomStat(), healthPoints, imageURL = "images/angry-man.jpg") {
+function makeBoss(imageURL, attack = randomStat(), defense = randomStat(), specialAttack = randomStat(), healthPoints) {
 
-  newBoss = new Boss(attack, defense, specialAttack, healthPoints, imageURL);
+  newBoss = new Boss(imageURL, attack, defense, specialAttack, healthPoints);
   console.log(newBoss);
   bossArr.push(newBoss);
   return bossArr;
 
 }
 
-console.log(makeBoss(randomStat(), randomStat(), randomStat(), 'image here'));
 
-console.log(makeBoss(randomStat(), randomStat(), randomStat(), 'image here'));
 
-console.log(makeBoss(randomStat(), randomStat(), randomStat(), 'image here'));
+// console.log(makeBoss('images/401.png',randomStat(), randomStat(), randomStat()));
+// makeBoss('images/401.png',randomStat(), randomStat(), randomStat());
+// makeBoss('images/201.jpg',randomStat(), randomStat(), randomStat());
+makeBoss(,randomStat(), randomStat(), randomStat());
+
+
 
 console.log(bossArr);
 //RANDOMIZER FOR PLAYER AND BOSS STATS - CAN WE USE THE SAME ONE FOR GAMEPLAY?
@@ -216,6 +220,8 @@ function startFight() {
   moveSection.setAttribute("class","use");
 
   storePlayer();
+  renderCharacters();
+  gamePlayScreen.setAttribute("class","use");
 }
 
 
@@ -256,18 +262,24 @@ moveSection.addEventListener('click', getMoveChoice);
 
 //RENDERS GAMEPLAY AREA 
 
-function Render() {
-  let gamePlayScreen = document.querySelector("gamePlayScreen");
-  gamePlayScreen.innerHTML = 'Section<div class=“headerInner”><pid=“test”>HP: Enemy</p>' + '<img src=“https://via.placeholder.com/300x375/ddd”></div></section><section><div class=“headerInner”><pid=“test”>HP: Player</p> + <img src=“https://thumbs.dreamstime.com/z/tough-man-18388218.jpg“></div></section>';
+function renderCharacters() {
+  
+  playerCh.innerHTML = `<img src="${newPlayer.avatar}"></img>`;
+  bossCh.innerHTML = `<img src="${newBoss.image}"></img>`
+  console.log(newBoss.image);
 }
 
 
-function renderleaderBoard() {
+// let playerCh = document.getElementById("playerImage");
+// let bossCh = document.getElementById("bossImage");
+
+
+function renderLeaderBoard() {
   let leaderBoard = document.querySelector("#leaderBoard");
   leaderBoard.innerHTML = `<ul><li>${newPlayer.playerName} total wins: ${newPlayer.totalWins}</li><li>Player Total loses:${newPlayer.totalLosses}</li></ul>`
 }
 
-renderleaderBoard();
+// renderLeaderBoard();
 console.log(newPlayer);
 
 
@@ -275,6 +287,7 @@ function hideLeaderBoard(event) {
 
 
   let x = document.getElementById("leaderBoard");
+  renderLeaderBoard();
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -287,6 +300,5 @@ function hideLeaderBoard(event) {
 
 
 
-document.getElementById("seeStats").addEventListener("click", hideLeaderBoard);
-
+document.getElementById("seeStats").addEventListener("click", hideLeaderBoard)
 
