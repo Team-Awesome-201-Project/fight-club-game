@@ -1,4 +1,3 @@
-
 //USER INPUT FORM
 let form = document.getElementById('newUser');
 
@@ -256,18 +255,18 @@ moveSection.addEventListener('click', getMoveChoice);
 
 //RENDERS GAMEPLAY AREA 
 
-function Render() {
+function render() {
   let gamePlayScreen = document.querySelector("gamePlayScreen");
   gamePlayScreen.innerHTML = 'Section<div class=“headerInner”><pid=“test”>HP: Enemy</p>' + '<img src=“https://via.placeholder.com/300x375/ddd”></div></section><section><div class=“headerInner”><pid=“test”>HP: Player</p> + <img src=“https://thumbs.dreamstime.com/z/tough-man-18388218.jpg“></div></section>';
 }
 
 
-function renderleaderBoard() {
+function renderLeaderBoard() {
   let leaderBoard = document.querySelector("#leaderBoard");
   leaderBoard.innerHTML = `<ul><li>${newPlayer.playerName} total wins: ${newPlayer.totalWins}</li><li>Player Total loses:${newPlayer.totalLosses}</li></ul>`
 }
 
-renderleaderBoard();
+// renderLeaderBoard();
 console.log(newPlayer);
 
 
@@ -275,6 +274,7 @@ function hideLeaderBoard(event) {
 
 
   let x = document.getElementById("leaderBoard");
+  renderLeaderBoard();
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -288,5 +288,3 @@ function hideLeaderBoard(event) {
 
 
 document.getElementById("seeStats").addEventListener("click", hideLeaderBoard);
-
-
