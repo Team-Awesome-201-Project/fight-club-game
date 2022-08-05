@@ -47,6 +47,23 @@ footer {
   grid-row-end: 3;
 }
 
+
+.submitForm {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 60% 25%;
+}
+
+#avatarImages {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
 #playerImage {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -74,4 +91,3 @@ footer {
     grid-row-start: 4;
     grid-row-end: 5;
 }
-

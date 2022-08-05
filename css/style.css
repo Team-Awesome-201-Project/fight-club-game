@@ -33,6 +33,7 @@ h1 {
   font-family: 'Nosifer', cursive;
 }
 
+
 #leaderBoard {
   background: url("/images/highscore.gif") no-repeat;
   background-size: cover;
@@ -44,19 +45,27 @@ h1 {
   width: 50%;
 }
 
+input[type="radio"] {
+  opacity: 0;
+}
+
+#avatarImage {
+  margin-left: 2px;
+}
+
 .about-us {
   position: relative;
-  top: 300px;
+  top: 100px;
+  left: 50%;
   background: url("/images/highscore.gif") no-repeat;
   background-size: cover;
-  text-align: center;
   opacity: 0.8;  background-color: rgb(72, 71, 72);
-  align-content: center;
+  margin: auto;
 }
 
 footer {
   position: relative;
-  top: 400px;
+  top: 125px;
   background: url("/images/highscore.gif") no-repeat;
   background-size: cover;
   text-align: center;
@@ -66,7 +75,7 @@ footer {
 }
 
 .gamePlayScreen {
-  opacity: .5;
+  opacity: .7;
   background: url("/images/matrix.gif") no-repeat;
   background-size: cover;
 }
