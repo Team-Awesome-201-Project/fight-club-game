@@ -35,7 +35,7 @@ h1 {
 
 
 #leaderBoard {
-  background: url("/images/highscore.gif") no-repeat;
+  background: url("images/highscore.gif") no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
