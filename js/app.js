@@ -275,7 +275,7 @@ function renderCharacters() {
 
 function renderLeaderBoard() {
   let leaderBoard = document.querySelector("#leaderBoard");
-  leaderBoard.innerHTML = `<ul><li>${newPlayer.playerName} total wins: ${newPlayer.totalWins}</li><li>Player Total loses:${newPlayer.totalLosses}</li></ul>`
+  leaderBoard.innerHTML = `<ul><li>${newPlayer.playerName} total wins: ${newPlayer.totalWins}</li><li>${newPlayer.playerName} Total loses:${newPlayer.totalLosses}</li></ul>`
 }
 
 // renderLeaderBoard();
@@ -300,4 +300,3 @@ function hideLeaderBoard(event) {
 
 
 document.getElementById("seeStats").addEventListener("click", hideLeaderBoard)
-
