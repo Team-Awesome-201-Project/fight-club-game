@@ -84,7 +84,7 @@ function gameLogic(playerButtonClick) {
     if (newPlayer.healthPoints === 0) {
 
         alert('defeat')
-        newPlayer.totalLosses ;
+        newPlayer.totalLosses++ ;
         console.log('Reminder to call to main page/un-render');
         console.log('Reminder to update leaderboard');
         
@@ -95,7 +95,7 @@ function gameLogic(playerButtonClick) {
     } else {
         console.log('Player: Now its my turn');
     }
-    return;
+    
 }
 
 function gameEnd() {
@@ -115,21 +115,3 @@ boss = bossArr[i];
 console.log(bossArr[i]);
 }
 
-
-
-
-
-
-
-
-// function renderCombatLog() {
-//     let combatLog = document.querySelector(".combatLog")
-//     combatLog.innerHTML = `<p>Player did ${playerIncDmg}</p>${boss.healthPoints}<p></p>`
-// }
-// renderCombatLog();
-
-
-
-//   let combatBossHP = document.createElement('p');
-//   let textNode = document.createTextNode("test2");
-//   combatBossHP.appendChild(textNode);
