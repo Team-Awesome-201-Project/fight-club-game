@@ -26,6 +26,7 @@ function gameLogic(playerButtonClick) {
     let player = '';
     console.log('boss[]', i);
     let boss = bossArr[i];
+    console.log(bossArr);
     let playerIncDmg = 0;
     let bossIncDmg = 0;
     let playerDefense = false;
@@ -60,7 +61,8 @@ function gameLogic(playerButtonClick) {
         // localStorage.clear();
         newPlayer.totalWins ++;
       gameEnd();
-        // Call next boss
+      newBoss = boss;
+      renderCharacters();
 
     } else {
         console.log('Boss: Now its my turn');
@@ -103,8 +105,8 @@ function gameEnd() {
     stringifiedPlayer = JSON.stringify(newPlayer);
     localStorage.setItem('storedPlayer', stringifiedPlayer);
     moveSection.setAttribute("class","dont-use");
-
-    if(i < bossArr.length -1){
+    console.log('game eneded moving to next index', i);
+    if(i < bossArr.length){
      i++; 
     }
 else {
