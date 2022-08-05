@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+ .parentContainer{
+width: 85%;
+height: 720px;
+margin: 0 auto;
+}
+
+.combatLog {
+  background: url("/images/combat.gif") no-repeat;
+  background-size: 100%;
+  height: 100%;
+  width: 50%;
+}
+
+.combatLog {
+  display: inline-block;
+  align-items: center;
+  font-size: x-large;
+  color: rgb(184, 1, 1);
+  font-weight: bolder;
+  -webkit-text-stroke: .2px rgba(46, 7, 93, 0.515)
+}
+
+h1 {
+  font-size: 50px;
+  margin: auto;
+  text-align: center;
+  color: rgb(102, 0, 0);
+  opacity: 0.8;
+  font-family: 'Nosifer', cursive;
+}
+
+
+#leaderBoard {
+  background: url("/images/highscore.gif") no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+  opacity: 0.8;  background-color: red;
+  height: 100%;
+  width: 50%;
+}
+
+input[type="radio"] {
+  opacity: 0;
+}
+
+#avatarImage {
+  margin-left: 2px;
+}
+
+.about-us {
+  position: relative;
+  top: 100px;
+  left: 50%;
+  background: url("/images/highscore.gif") no-repeat;
+  background-size: cover;
+  opacity: 0.8;  background-color: rgb(72, 71, 72);
+  margin: auto;
+}
+
+footer {
+  position: relative;
+  top: 125px;
+  background: url("/images/highscore.gif") no-repeat;
+  background-size: cover;
+  text-align: center;
+  opacity: 0.8;  background-color: rgb(72, 71, 72);
+  align-content: center;
+
+}
+
+.gamePlayScreen {
+  opacity: .7;
+  background: url("/images/matrix.gif") no-repeat;
+  background-size: cover;
+}
+
+.dont-use {
+  display: none;
+
+}
+
+#bossImage {
+  margin:auto;
+}
+
+#playerImage {
+  margin:auto;
+}
+
+#moveSection {
+  margin:auto;
+}
+
+#fight {
+  background:rgb(139, 2, 2);
+  position: relative;
+  transition: transform 1s ease-in-out;
+}
+
+#fight:hover {
+  box-shadow: 0px 2px 0 white, 2px 4px 6px #3498db;
+  transform: rotate(360deg);
+}
+
+#seeStats {
+  background:rgb(139, 2, 2);
+  position: relative;
+  transition: transform .7s ease-in-out;
+}
+
+#seeStats:hover {
+  box-shadow: 0px 2px 0 white, 2px 4px 6px #3498db;
+  transform: rotate(360deg);
+}
+
+#attack {
+  background: rgb(139, 2, 2);;
+  border: 1px solid rgba(255, 255, 255, 0.424);
+  box-shadow: 0px 2px 0 rgba(255, 255, 255, 0.424), 2px 4px 6px rgb(123, 36, 36);
+  font-weight: 900;
+  transition: all 150ms linear;
+}
+
+#attack:hover {
+  background: #3498db;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#defend {
+  background: rgb(139, 2, 2);;
+  border: 1px solid rgba(255, 255, 255, 0.424);
+  box-shadow: 0px 2px 0 rgba(255, 255, 255, 0.424), 2px 4px 6px rgb(123, 36, 36);
+  font-weight: 900;
+  transition: all 150ms linear;
+}
+
+#defend:hover {
+  background: #3498db;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#specialAttack {
+  background: rgb(139, 2, 2);;
+  border: 1px solid rgba(255, 255, 255, 0.424);
+  box-shadow: 0px 2px 0 rgba(255, 255, 255, 0.424), 2px 4px 6px rgb(123, 36, 36);
+  font-weight: 900;
+  transition: all 150ms linear;
+}
+
+#specialAttack:hover {
+  background: #3498db;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#avatarImages::content {
+  align-content: center;
+}
+  

@@ -1,0 +1,93 @@
+html {
+  background: url("/images/table-light.jpg") no-repeat;
+  background-size: cover;
+}
+
+.parentContainer {
+  display: grid;
+  height: 1080px;
+  width: 1080px;
+  grid-template-columns: 20% 30% 50%;
+  grid-template-rows: 5% 60% 20% 5%;
+}
+
+h1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.submitForm {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.dataBlock {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+}
+
+.gamePlayScreen {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+.submitForm {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 60% 25%;
+}
+
+#avatarImages {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#playerImage {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#bossImage {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+#moveSection {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.buttonRow {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
