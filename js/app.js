@@ -9,8 +9,8 @@ function handleSubmit(event) {
   let avatarChoice = event.target.chooseAvatar.value;
   form.reset();
   console.log(`This is the new character ${newUserName}, and his image address is ${avatarChoice}`);
-  newPlayer = new Player(newUserName, avatarChoice, randomStat(), randomStat(), 
-  randomStat());
+  newPlayer = new Player(newUserName, avatarChoice, randomStat(), randomStat(),
+    randomStat());
   form.setAttribute("class", "dont-use");
   console.log(newPlayer);
 }
@@ -112,8 +112,8 @@ function makeBoss(imageURL, attack = randomStat(), defense = randomStat(), speci
 }
 
 
-makeBoss('images/401.png',[1, 5], randomStat(), [5, 10]);
-makeBoss('images/201.jpg',[100, 100], randomStat(), [1000, 1000]);
+makeBoss('images/401.png', [1, 5], randomStat(), [5, 10]);
+makeBoss('images/201.jpg', [100, 100], randomStat(), [1000, 1000]);
 // makeBoss(,randomStat(), randomStat(), randomStat());
 
 
@@ -216,11 +216,11 @@ function startFight() {
   // newPlayer.totalLosses++;
   document.getElementById("fight").innerHTML = "Fight Again";
   console.log(newPlayer);
-  moveSection.setAttribute("class","use");
+  moveSection.setAttribute("class", "use");
 
   storePlayer();
   renderCharacters();
-  gamePlayScreen.setAttribute("class","use");
+  gamePlayScreen.setAttribute("class", "use");
 }
 
 
@@ -262,7 +262,7 @@ moveSection.addEventListener('click', getMoveChoice);
 //RENDERS GAMEPLAY AREA 
 
 function renderCharacters() {
-  
+
   playerCh.innerHTML = `<img src="${newPlayer.avatar}"></img>`;
   bossCh.innerHTML = `<img src="${newBoss.image}"></img>`
   console.log(newBoss.image);
