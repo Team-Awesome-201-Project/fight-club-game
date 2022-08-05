@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+ .parentContainer{
+width: 85%;
+height: 720px;
+margin: 0 auto;
+}
+
+.combatLog {
+  opacity: 0.8;  background-color: aquamarine;
+  height: 100%;
+  width: 50%;
+}
+
+h1 {
+  opacity: 0.8;
+  background-color: burlywood;
+  font-family: 'Nosifer', cursive;
+
+}
+
+#leaderBoard {
+  opacity: 0.8;  background-color: red;
+  height: 100%;
+  width: 50%;
+}
+
+.submitForm {
+  opacity: 0.8;  background-color: beige;
+}
+
+.dataBlock {
+  opacity: 0.8;  background-color: green;
+}
+
+footer {
+  opacity: 0.8;  background-color: blueviolet;
+  align-content: center;
+
+}
+
+.dont-use {
+  display: none;
+
+}
+
+#playerImage {
+  background-color: black;
+}
+
+#bossImage {
+  background-color: aquamarine;
+}
+
+#fight {
+  background:rgb(139, 2, 2);
+  position: relative;
+  transition: transform 1s ease-in-out;
+}
+
+#fight:hover {
+  box-shadow: 0px 2px 0 white, 2px 4px 6px #3498db;
+  transform: rotate(360deg);
+}
+
+#seeStats {
+  background:rgb(139, 2, 2);
+  position: relative;
+  transition: transform .7s ease-in-out;
+}
+
+#seeStats:hover {
+  box-shadow: 0px 2px 0 white, 2px 4px 6px #3498db;
+  transform: rotate(360deg);
+}
+
+#attack {
+  background: rgb(139, 2, 2);;
+  border: 1px solid rgba(255, 255, 255, 0.424);
+  box-shadow: 0px 2px 0 rgba(255, 255, 255, 0.424), 2px 4px 6px rgb(123, 36, 36);
+  font-weight: 900;
+  transition: all 150ms linear;
+}
+
+#attack:hover {
+  background: #3498db;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#defend {
+  background: rgb(139, 2, 2);;
+  border: 1px solid rgba(255, 255, 255, 0.424);
+  box-shadow: 0px 2px 0 rgba(255, 255, 255, 0.424), 2px 4px 6px rgb(123, 36, 36);
+  font-weight: 900;
+  transition: all 150ms linear;
+}
+
+#defend:hover {
+  background: #3498db;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#specialAttack {
+  background: rgb(139, 2, 2);;
+  border: 1px solid rgba(255, 255, 255, 0.424);
+  box-shadow: 0px 2px 0 rgba(255, 255, 255, 0.424), 2px 4px 6px rgb(123, 36, 36);
+  font-weight: 900;
+  transition: all 150ms linear;
+}
+
+#specialAttack:hover {
+  background: #3498db;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#avatarImages::content {
+  align-content: center;
+}
+  
