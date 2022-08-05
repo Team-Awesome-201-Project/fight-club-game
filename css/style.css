@@ -9,34 +9,75 @@ margin: 0 auto;
 }
 
 .combatLog {
-  opacity: 0.8;  background-color: aquamarine;
+  background: url("/images/combat.gif") no-repeat;
+  background-size: 100%;
   height: 100%;
   width: 50%;
 }
 
-h1 {
-  opacity: 0.8;
-  background-color: brown;
+.combatLog {
+  display: inline-block;
+  align-items: center;
+  font-size: x-large;
+  color: rgb(184, 1, 1);
+  font-weight: bolder;
+  -webkit-text-stroke: .2px rgba(46, 7, 93, 0.515)
 }
 
+h1 {
+  font-size: 50px;
+  margin: auto;
+  text-align: center;
+  color: rgb(102, 0, 0);
+  opacity: 0.8;
+  font-family: 'Nosifer', cursive;
+}
+
+
 #leaderBoard {
+  background: url("/images/highscore.gif") no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  font-size: x-large;
   opacity: 0.8;  background-color: red;
   height: 100%;
   width: 50%;
 }
 
-.submitForm {
-  opacity: 0.8;  background-color: beige;
+input[type="radio"] {
+  opacity: 0;
 }
 
-.dataBlock {
-  opacity: 0.8;  background-color: green;
+#avatarImage {
+  margin-left: 2px;
+}
+
+.about-us {
+  position: relative;
+  top: 100px;
+  left: 50%;
+  background: url("/images/highscore.gif") no-repeat;
+  background-size: cover;
+  opacity: 0.8;  background-color: rgb(72, 71, 72);
+  margin: auto;
 }
 
 footer {
-  opacity: 0.8;  background-color: blueviolet;
+  position: relative;
+  top: 125px;
+  background: url("/images/highscore.gif") no-repeat;
+  background-size: cover;
+  text-align: center;
+  opacity: 0.8;  background-color: rgb(72, 71, 72);
   align-content: center;
 
+}
+
+.gamePlayScreen {
+  opacity: .7;
+  background: url("/images/matrix.gif") no-repeat;
+  background-size: cover;
 }
 
 .dont-use {
@@ -44,12 +85,16 @@ footer {
 
 }
 
-#playerImage {
-  background-color: black;
+#bossImage {
+  margin:auto;
 }
 
-#bossImage {
-  background-color: aquamarine;
+#playerImage {
+  margin:auto;
+}
+
+#moveSection {
+  margin:auto;
 }
 
 #fight {

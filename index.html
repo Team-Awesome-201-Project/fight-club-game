@@ -2,17 +2,22 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/style.css" />
+ 
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/gridLayout.css" />
-  <title>Fight Club Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 
 </head>
 
 <body>
 
 
-  <h1>Fight Club 1.0 - Code Fellows Edition</h1>
+
+  <h1>FIGHT CLUB <br> CODE FELLOWS EDITION</h1>
+
 
   <div class="parentContainer">
     <!--This is the form for choosing a new user-->
@@ -24,14 +29,14 @@
           </label>
           <section id="avatarImages">
             <input type="radio" id="avatar1" name="chooseAvatar" value="images/Code_Fellows.png" checked>
-            <label for="avatar1"><img src="images/Code_Fellows.png" alt="Code Fellows Logo" width="100px"
-                height="100px"></label>
+            <label for="avatar1"><img src="images/Code_Fellows.png" alt="Code Fellows Logo" width="75px"
+                height="75px"></label>
             <input type="radio" id="avatar2" name="chooseAvatar" value="images/HTML.png">
-            <label for="avatar2"><img src="images/HTML.png" alt="HTML Logo" width="100px" height="100px"></label>
+            <label for="avatar2"><img src="images/HTML.png" alt="HTML Logo" width="75px" height="75px"></label>
             <input type="radio" id="avatar3" name="chooseAvatar" value="images/CSS.png">
-            <label for="avatar3"><img src="images/CSS.png" alt="CSS Logo" width="100px" height="100px"></label>
+            <label for="avatar3"><img src="images/CSS.png" alt="CSS Logo" width="75px" height="75px"></label>
             <input type="radio" id="avatar4" name="chooseAvatar" value="images/JavaScript.png">
-            <label for="avatar4"><img src="images/JavaScript.png" alt="JavaScript Logo" width="100px" height="100px"></label>
+            <label for="avatar4"><img src="images/JavaScript.png" alt="JavaScript Logo" width="75px" height="75px"></label>
           </section>
         </fieldset>
         <button type="submit">Submit</button>
@@ -54,7 +59,7 @@
 
     <div class="dataBlock">
       <section class="combatLog">
-        <p>Combat log here</p>
+        <p></p>
       </section>
 
      
@@ -72,12 +77,11 @@
 
   
   </div> <!--This is the end of the grid container div-->
-  <div id="us">
-   <a href='meet-the-team.html'>
-    <button class="about-us">
-        About Us
-    </button>
-  </div>  
+
+  <!--This is the button for starting and restarting fights-->
+  <a href="meet-the-team.html"><button class="about-us">
+    About Us
+</button></a>
 
 <footer>
     <p> Copyright &copy 2022 - All Rights Reserved</p>
